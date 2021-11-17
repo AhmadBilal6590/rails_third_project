@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   get 'post/:id/destroy' => 'post#destroy', as:'post_destroy'
   
-  patch 'patch/:id/update'=> 'post#update', as:'post_update'
+  patch 'post/:id/update'=> 'post#update', as:'post_update'
+
+  get 'post/:id/show'=> 'post#show', as:'post_show'
 
 
   
