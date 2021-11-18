@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: 'post#index'
+  root to: 'post#index' 
 
   get 'post/new' => 'post#new', as:'post_new'
 
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   patch 'post/:id/update'=> 'post#update', as:'post_update'
 
   get 'post/:id/show'=> 'post#show', as:'post_show'
+
+  post 'comment/create' => 'comments#create', as:'comment_create'
 
 
   

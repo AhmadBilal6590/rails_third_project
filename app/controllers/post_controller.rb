@@ -3,8 +3,10 @@ class PostController < ApplicationController
     skip_before_action :verify_authenticity_token, :only => [:create]
 
     def index
-       
-        @post=Post.all
+
+        # @q = Post.ransack(params[:q])
+        # @people = @q.result
+      
 
         @pagy, @post = pagy(Post.all)
         # byebug
@@ -16,6 +18,7 @@ class PostController < ApplicationController
     def show 
 
        @post = Post.find(params[:id])
+       @comments = @post.comments
 
     end
 

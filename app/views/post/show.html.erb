@@ -2,7 +2,24 @@
  
  <div class="container mt-5"> 
 
-<h3><%=  @post.post_name%>  </h3>
+    <h3><%=  @post.post_name%>  </h3>
+    <p><img src="<%=  @post.image%>"></p>
 
-<p><img src="<%=  @post.image%>"></p>
+    <%= form_with model:@comment, url: comment_create_path ,local: false  do |form| %>
+
+       <%= form.text_field :comment_text%>
+       <%= form.number_field :post_id, value: @post.id, type: :hidden%>
+
+       <%#= current_user.inspect%>
+
+        <% if current_user.present? %>
+            <%= form.number_field :user_id, value: current_user.id, type: :hidden %>
+        <%end %>
+
+       <%= form.submit "comment", class: "btn btn-success" %>
+
+    <% end %>
+
+    <%= render "comments/index"%>
+
  </div>
