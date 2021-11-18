@@ -1,5 +1,4 @@
 
-
 <%= form_with model:@post ,url: "create" do |form| %>
 
       <div class="container mt-5"> 
@@ -7,6 +6,12 @@
            <p>
              <%= form.label :title %>
              <%= form.text_field(:post_name ,{:class=>'form-control col-4'})%>
+
+              <%#= current_user.inspect %>
+              <% if current_user.present? %>
+                <%= form.number_field :user_id, value: current_user.id, type: :hidden %>
+              <%end %>
+              <%= form.file_field  :image%>
            </p>
              
             <p> 

@@ -1,15 +1,17 @@
-<% form_with model:@post, url:post_update_path(@post) , method: :patch,  local:true do |f|%>
-  
+<h2>
+</h2>
 
+<%= form_with model: @post, url: post_update_path(@post) , method: :patch,  local: true do |f|%>
+  
       <div class="container mt-5"> 
            <h2>Edit Posts</h2> 
            <p>
-             <%= form.label :title %>
-             <%= form.text_field(:post_name ,{:class=>'form-control col-4'})%>
+             <%= f.label :title %>
+             <%= f.text_field(:post_name ,{:class=>'form-control col-4'})%>
            </p>
              
             <p> 
-               <%= form.submit({:class =>'btn btn-secondary'}) %>
+               <%= f.submit({:class =>'btn btn-secondary'}) %>
             </p>
       </div> 
     
