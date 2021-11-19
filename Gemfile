@@ -36,7 +36,7 @@ gem 'pagy', '~> 5.4'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-# gem 'pg_search'/
+# gem 'pg_search'
 
 gem 'ransack'
 

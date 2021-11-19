@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   root to: 'post#index' 
 
+  
+  # get 'post/search' => 'post#search'
+
   get 'post/new' => 'post#new', as:'post_new'
 
   post 'post/create' => 'post#create'

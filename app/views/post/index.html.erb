@@ -2,6 +2,21 @@
 <%  if current_user.present? %>
 
 
+<div>
+
+    <%= form_with url:root_path, :class=>"form-inline" , method: :get do |f|  %>
+      <div class="ml-auto">
+          <%= f.text_field(:post_name ,{:class=>"form-control" ,:placeholder=>"Search" }) %>
+          <%= f.submit("Search",{:class =>"btn btn-outline-success "}) %>
+      </div>
+    <%end%>
+
+</div>
+
+  
+  
+
+
 <div class="container mt-5" >
   <h3>Posts Lists</h3>
   <table class="table table-dark table-striped">
@@ -33,7 +48,9 @@
   </table>
 </div>
 
+<% if(@pagy)%>
 <div class="d-flex justify-content-center"><%== pagy_bootstrap_nav(@pagy)%></div>
+<%end%>
 <%else%>
 
    <p class="notice"> <%= notice %></p>
